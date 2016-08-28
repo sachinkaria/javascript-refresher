@@ -1,49 +1,58 @@
 var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
-
-var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
+  return array.filter(function startingWithA(word) {
+  return word.charAt(0) === 'a';
+});
 }
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
+  return array.filter(function startingWithVowel(word) {
+  return /^[aeiou]/.exec(word);
+});
 }
 
 var removeNullElements = function(array) {
-  return 'Write your method here';
+  return _.without(array,null);
 }
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
+  return _.without(array, null, false);
 }
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
+  return array.map(function (word) { return word.split('').reverse().join('') })
 }
 
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
+  var combos = [];
+  for (var i = 0; i < array.length; i++)
+    for (var j = i + 1; j < array.length; j++)
+        combos.push([array[i], array[j]]);
+        return combos;
 }
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
+  array.splice(0,3);
+  return array;
 }
 
 var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
+   array.unshift(element);
+   return array;
 }
 
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
+  var arr = array.map(function (word) { return word.split('').reverse().join('') })
+return arr.sort().map(function (word) { return word.split('').reverse().join('') })
 }
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
+  return string.slice(0,(string.length/2));
 }
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+  if (number < 0) {
+    number = number } else { number = number*-1 };
+    return number
 }
 
 var numberOfPalindromes = function(array) {
@@ -51,31 +60,49 @@ var numberOfPalindromes = function(array) {
 }
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+  var longestWord = "1234567890";
+  var index = 0;
+  for (var i=0; i < array.length; i++){
+    if(array[i].length < longestWord.length){
+       longestWord = array[i];
+    }
+  }
+  return longestWord;
 }
 
 var longestWord = function(array) {
-  return 'Write your method here';
+  var longestWord = "";
+  var index = 0;
+  for (var i=0; i < array.length; i++){
+    if(array[i].length > longestWord.length){
+       longestWord = array[i];
+    }
+  }
+  return longestWord;
 }
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
+  return array.reduce((a,b) => a+b,0);
 }
 
 var repeatElements = function(array) {
-  return 'Write your method here';
+  return array.concat(array);
 }
 
 var stringToNumber = function(string) {
-  return 'Write your method here';
+  return parseInt(string);
 }
 
 var calculateAverage = function(array) {
-  return 'Write your method here';
+  return array.reduce((a,b) => a+b,0) / array.length;
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
-  return 'Write your method here';
+  var arr = []
+   _.some(array),(function(v){
+    if (v < 6) {arr.push(v)}
+    else {arr};
+  });
 }
 
 var convertArrayToObject = function(array) {
